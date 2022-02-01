@@ -23,8 +23,14 @@ WebElement.select1 = WebElement.find_element_by_css_selector
 WebElement.__getitem__ = WebElement.get_attribute
 
 # Test code to import By
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+import time
+    print('all module are loaded ')
 
 # show screenshot easily with _repr_png_
 def _screen_shot(self):
