@@ -24,6 +24,7 @@ WebElement.__getitem__ = WebElement.get_attribute
 
 # Test code to import By
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 # show screenshot easily with _repr_png_
 def _screen_shot(self):
