@@ -30,7 +30,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import time
-    print('all module are loaded ')
+print('all module are loaded ')
 
 # show screenshot easily with _repr_png_
 def _screen_shot(self):
