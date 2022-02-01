@@ -22,6 +22,9 @@ WebElement.select = WebElement.find_elements_by_css_selector
 WebElement.select1 = WebElement.find_element_by_css_selector
 WebElement.__getitem__ = WebElement.get_attribute
 
+# Test code to import By
+from selenium.webdriver.common.by import By
+
 # show screenshot easily with _repr_png_
 def _screen_shot(self):
     from tempfile import NamedTemporaryFile as TempFile
