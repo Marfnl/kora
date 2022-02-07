@@ -8,7 +8,7 @@ os.system('pip install selenium')
 from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import BY
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
@@ -19,7 +19,7 @@ print('all module are loaded ')
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    By = By
+    By = BY
 
     def __init__(self):
         '''instantiate driver'''
