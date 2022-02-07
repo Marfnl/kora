@@ -19,7 +19,7 @@ print('all module are loaded ')
 # --- webdriver class that can be closed and restarted ---
 
 class By(object):
-'''Set of supported locator strategies.'''
+#'''Set of supported locator strategies.'''
     ID = "id"
     XPATH = "xpath"
     LINK_TEXT = "link text"
