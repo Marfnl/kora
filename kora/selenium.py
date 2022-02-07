@@ -20,10 +20,10 @@ print('all module are loaded ')
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    self.By = By
 
     def __init__(self):
         '''instantiate driver'''
+        self.By = By
         
         # set options to be headless, ..
         options = webdriver.ChromeOptions()
