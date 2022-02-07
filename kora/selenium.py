@@ -18,6 +18,18 @@ print('all module are loaded ')
 
 # --- webdriver class that can be closed and restarted ---
 
+    class By(object):
+    '''Set of supported locator strategies.'''
+
+    ID = "id"
+    XPATH = "xpath"
+    LINK_TEXT = "link text"
+    PARTIAL_LINK_TEXT = "partial link text"
+    NAME = "name"
+    TAG_NAME = "tag name"
+    CLASS_NAME = "class name"
+    CSS_SELECTOR = "css selector"
+
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
 
@@ -39,20 +51,7 @@ class WD(webdriver.Chrome):
 
     def select1(self, *args, **kwargs):
         return self.find_element_by_css_selector(*args, **kwargs)
-    
-    class By(object):
-    """
-    Set of supported locator strategies.
-    """
-
-    ID = "id"
-    XPATH = "xpath"
-    LINK_TEXT = "link text"
-    PARTIAL_LINK_TEXT = "partial link text"
-    NAME = "name"
-    TAG_NAME = "tag name"
-    CLASS_NAME = "class name"
-    CSS_SELECTOR = "css selector"
+   
 
 # show screenshot easily with _repr_png_
 #def _screen_shot(self):
