@@ -12,6 +12,7 @@ from selenium.webdriver.remote.webelement import WebElement
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
+    from selenium.webdriver.common.by import By
     def __init__(self):
         '''instantiate driver'''
 
