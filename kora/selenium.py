@@ -12,10 +12,11 @@ from selenium.webdriver.remote.webelement import WebElement
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    from selenium.webdriver.common.by import By
+    from WD.common.by import By
+    
     def __init__(self):
         '''instantiate driver'''
-
+        
         # set options to be headless, ..
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
