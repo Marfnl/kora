@@ -15,15 +15,15 @@ from selenium import webdriver
 
 #Testing replacement
 class WD(webdriver.Chrome):
-    from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.common.action_chains import ActionChains
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.common.exceptions import TimeoutException
-    print('all module are loaded ')
+
     def __init__(self):
-        '''instantiate driver'''
+            from selenium.webdriver.common.keys import Keys
+            from selenium.webdriver.common.by import By
+            from selenium.webdriver.support.ui import WebDriverWait
+            from selenium.webdriver.common.action_chains import ActionChains
+            from selenium.webdriver.support import expected_conditions as EC
+            from selenium.common.exceptions import TimeoutException
+            print('all module are loaded ')
 
         # set options to be headless, ..
         options = webdriver.ChromeOptions()
