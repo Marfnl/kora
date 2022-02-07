@@ -4,13 +4,35 @@ os.system('apt update')
 os.system('apt install chromium-chromedriver')
 os.system('pip install selenium')
 # set options to be headless, ..
-from selenium import webdriver
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
+#old version
+#from selenium import webdriver
+#options = webdriver.ChromeOptions()
+#options.add_argument('--headless')
+#options.add_argument('--no-sandbox')
+#options.add_argument('--disable-dev-shm-usage')
 # create a webdriver instance, ready to use
-wd = webdriver.Chrome('chromedriver',options=options)
+#wd = webdriver.Chrome('chromedriver',options=options)
+
+#Testing replacement
+class WD(webdriver.Chrome):
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+    print('all module are loaded ')
+    def __init__(self):
+        '''instantiate driver'''
+
+        # set options to be headless, ..
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+
+        # create a webdriver instance, ready to use
+        super().__init__('chromedriver', options=options)
 
 # make it easier to query and explore elements
 wd.select = wd.find_elements_by_css_selector
@@ -23,14 +45,14 @@ WebElement.select1 = WebElement.find_element_by_css_selector
 WebElement.__getitem__ = WebElement.get_attribute
 
 # Test code to import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-import time
-print('all module are loaded ')
+#from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.common.by import By
+#from selenium.webdriver.support.ui import WebDriverWait
+#from selenium.webdriver.common.action_chains import ActionChains
+#from selenium.webdriver.support import expected_conditions as EC
+#from selenium.common.exceptions import TimeoutException
+#import time
+#print('all module are loaded ')
 
 # show screenshot easily with _repr_png_
 def _screen_shot(self):
