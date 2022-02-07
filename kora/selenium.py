@@ -25,10 +25,6 @@ class WD(webdriver.Chrome):
         # create a webdriver instance, ready to use
         super().__init__('chromedriver', options=options)
 
-    # Add By
-    def By(self):
-    return from selenium.webdriver.common.by import By
-
     # make it easier to query and explore elements 
     def select(self, *args, **kwargs):
         return self.find_elements_by_css_selector(*args, **kwargs)
@@ -37,9 +33,9 @@ class WD(webdriver.Chrome):
         return self.find_element_by_css_selector(*args, **kwargs)
 
 # show screenshot easily with _repr_png_
-def _screen_shot(self):
-    from tempfile import NamedTemporaryFile as TempFile
-    tmp = TempFile(suffix='.png')
-    self.save_screenshot(tmp.name)
-    return tmp.read()
-webdriver.Chrome._repr_png_ = _screen_shot
+#def _screen_shot(self):
+#    from tempfile import NamedTemporaryFile as TempFile
+#    tmp = TempFile(suffix='.png')
+#    self.save_screenshot(tmp.name)
+#    return tmp.read()
+#webdriver.Chrome._repr_png_ = _screen_shot
