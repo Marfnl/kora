@@ -29,6 +29,17 @@ class WD(webdriver.Chrome):
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
+        
+        #New options added for Hiding selenium activity
+        options.add_argument('--start-maximized')
+        options.add_argument('--start-fullscreen')
+        options.add_argument('--single-process')
+        options.add_argument("--incognito")
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_experimental_option('useAutomationExtension', False)
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_argument("disable-infobars")
 
         # create a webdriver instance, ready to use
         super().__init__('chromedriver', options=options)
