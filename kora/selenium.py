@@ -27,7 +27,7 @@ class WD(webdriver.Chrome):
 
     # Add By
     def By(self):
-    return from self.common.by import By
+    return from selenium.webdriver.common.by import By
 
     # make it easier to query and explore elements 
     def select(self, *args, **kwargs):
