@@ -40,8 +40,7 @@ class WD(webdriver.Chrome):
     def select1(self, *args, **kwargs):
         return self.find_element(By.CSS_SELECTOR,*args, **kwargs)
    
-
- show screenshot easily with _repr_png_
+# show screenshot easily with _repr_png_
 def _screen_shot(self):
     from tempfile import NamedTemporaryFile as TempFile
     tmp = TempFile(suffix='.png')
