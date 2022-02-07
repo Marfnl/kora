@@ -35,14 +35,9 @@ class WD(webdriver.Chrome):
         super().__init__('chromedriver', options=options)
 
 # make it easier to query and explore elements
-wd.select = wd.find_elements_by_css_selector
-wd.select1 = wd.find_element_by_css_selector
-from selenium.webdriver.remote.webelement import WebElement
-WebElement.__str__ = lambda self: self.get_attribute('outerHTML')
-WebElement.__repr__ = WebElement.__str__
-WebElement.select = WebElement.find_elements_by_css_selector
-WebElement.select1 = WebElement.find_element_by_css_selector
-WebElement.__getitem__ = WebElement.get_attribute
+#wd.select = wd.find_elements_by_css_selector
+#wd.select1 = wd.find_element_by_css_selector
+
 
 # Test code to import By
 #from selenium.webdriver.common.keys import Keys
