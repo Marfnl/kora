@@ -10,7 +10,7 @@ from selenium.webdriver.remote.webelement import WebElement
 
 # --- webdriver class that can be closed and restarted ---
 
-class WD(webdriver.Chrome):
+class WD(webdriver.Chrome,webdriver.common.by):
     ''' webdriver helper class'''
     from WD.common.by import By
     
