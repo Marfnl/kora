@@ -5,7 +5,7 @@ os.system('apt install chromium-chromedriver')
 os.system('pip install selenium')
 # set options to be headless, ..
 #old version
-#from selenium import webdriver
+from selenium import webdriver
 #options = webdriver.ChromeOptions()
 #options.add_argument('--headless')
 #options.add_argument('--no-sandbox')
