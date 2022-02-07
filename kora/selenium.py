@@ -6,7 +6,7 @@ os.system('apt update')
 os.system('apt install chromium-chromedriver')
 os.system('pip install selenium')
 import selenium
-# from selenium import webdriver
+from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 # from selenium.webdriver.common.keys import Keys
 # from selenium.webdriver.common.by import By as BY
