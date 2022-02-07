@@ -19,7 +19,7 @@ print('all module are loaded ')
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    By = By    
+        wd = WD()    
     def __init__(self):
         '''instantiate driver'''
         
