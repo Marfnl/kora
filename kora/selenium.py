@@ -5,21 +5,22 @@ import os
 os.system('apt update')
 os.system('apt install chromium-chromedriver')
 os.system('pip install selenium')
-from selenium import webdriver
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By as BY
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+import selenium
+# from selenium import webdriver
+# from selenium.webdriver.remote.webelement import WebElement
+# from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.by import By as BY
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.common.exceptions import TimeoutException
 print('all module are loaded ')
 
 # --- webdriver class that can be closed and restarted ---
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    By = BY
+    By = selenium.webdriver.common.by
 
     def __init__(self):
         '''instantiate driver'''
