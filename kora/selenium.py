@@ -10,9 +10,10 @@ from selenium.webdriver.remote.webelement import WebElement
 
 # --- webdriver class that can be closed and restarted ---
 
-class WD(webdriver.Chrome,webdriver.common.by):
+class WD(webdriver.Chrome):
     ''' webdriver helper class'''
-    
+    def By(webdriver.common.by):
+        
     def __init__(self):
         '''instantiate driver'''
         
