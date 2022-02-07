@@ -25,6 +25,9 @@ class WD(webdriver.Chrome):
         # create a webdriver instance, ready to use
         super().__init__('chromedriver', options=options)
 
+    # Add By
+    def By(self):
+    return from self.common.by import By
 
     # make it easier to query and explore elements 
     def select(self, *args, **kwargs):
