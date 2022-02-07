@@ -9,7 +9,7 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 # from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.common.action_chains import ActionChains
 # from selenium.webdriver.support import expected_conditions as EC
@@ -17,13 +17,26 @@ from selenium.webdriver.common.by import By
 print('all module are loaded ')
 
 # --- webdriver class that can be closed and restarted ---
+class By(object):
+    """
+    Set of supported locator strategies.
+    """
+
+    ID = "id"
+    XPATH = "xpath"
+    LINK_TEXT = "link text"
+    PARTIAL_LINK_TEXT = "partial link text"
+    NAME = "name"
+    TAG_NAME = "tag name"
+    CLASS_NAME = "class name"
+    CSS_SELECTOR = "css selector"
+
 
 class WD(webdriver.Chrome):
     ''' webdriver helper class'''
 
     def __init__(self):
         '''instantiate driver'''
-        self.By = By
         
         # set options to be headless, ..
         options = webdriver.ChromeOptions()
