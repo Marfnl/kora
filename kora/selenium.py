@@ -57,4 +57,4 @@ class WD(webdriver.Chrome):
         tmp = TempFile(suffix='.png')
         self.save_screenshot(tmp.name)
         return tmp.read()
-webdriver.Chrome._repr_png_ = _screen_shot
+        webdriver.Chrome._repr_png_ = _screen_shot
