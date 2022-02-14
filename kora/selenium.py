@@ -35,7 +35,6 @@ class WD(webdriver.Chrome):
         options.add_argument('--start-fullscreen')
         options.add_argument('--single-process')
         options.add_argument('--incognito')
-        options.add_argument('--implicitly_wait', ["10"])
         options.add_argument('--disable-blink-features=AutomationControlled')
         options.add_experimental_option('useAutomationExtension', False)
         options.add_experimental_option('excludeSwitches', ["enable-automation"])
