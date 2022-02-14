@@ -1,6 +1,6 @@
 # --- code that only runs on import ---
 
-# install chromium, its driver, and selenium
+# install chromium, driver and selenium.
 import os
 os.system('apt update')
 os.system('apt install chromium-chromedriver')
@@ -30,16 +30,16 @@ class WD(webdriver.Chrome):
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         
-        #New options added for Hiding selenium activity
+        # options to conceal selenium activity on website - set to 
         options.add_argument('--start-maximized')
         options.add_argument('--start-fullscreen')
         options.add_argument('--single-process')
-        options.add_argument("--incognito")
-        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_argument('--incognito')
+        options.add_argument('--implicitly_wait', ["10"])
         options.add_argument('--disable-blink-features=AutomationControlled')
         options.add_experimental_option('useAutomationExtension', False)
-        options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        options.add_argument("disable-infobars")
+        options.add_experimental_option('excludeSwitches', ["enable-automation"])
+        options.add_argument('disable-infobars')
 
         # create a webdriver instance, ready to use
         super().__init__('chromedriver', options=options)
@@ -51,10 +51,10 @@ class WD(webdriver.Chrome):
     def select1(self, *args, **kwargs):
         return self.find_element(By.CSS_SELECTOR,*args, **kwargs)
    
-# show screenshot easily with _repr_png_
-def _screen_shot(self):
-    from tempfile import NamedTemporaryFile as TempFile
-    tmp = TempFile(suffix='.png')
-    self.save_screenshot(tmp.name)
-    return tmp.read()
+    # show screenshot easily with _repr_png_
+    def _screen_shot(self):
+        from tempfile import NamedTemporaryFile as TempFile
+        tmp = TempFile(suffix='.png')
+        self.save_screenshot(tmp.name)
+        return tmp.read()
 webdriver.Chrome._repr_png_ = _screen_shot
